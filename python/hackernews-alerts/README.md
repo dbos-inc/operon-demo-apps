@@ -23,9 +23,11 @@ To deploy this app as a persistent cron job to DBOS Cloud, first install the DBO
 npm i -g @dbos-inc/dbos-cloud
 ```
 
-Then, run this command to deploy your app:
+Then, run these commands to deploy your app:
 
 ```shell
+dbos-cloud app register -d <dbos-database-instance-name>
+dbos-cloud app secrets create -s SLACK_HN_BOT_OAUTH_TOKEN -v $SLACK_HN_BOT_OAUTH_TOKEN
 dbos-cloud app deploy
 ```
 

@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:2aad6ea335228730b1ed571798a862b7db1c9538a3b708ab9ef299f2e4c3ff71"
+content_hash = "sha256:9fab35ae45e888f51a6aad633609b917d01ef37b1cc9465ab6a4f2be3d307291"
 
 [[metadata.targets]]
 requires_python = ">=3.9"
@@ -220,19 +220,19 @@ files = [
 
 [[package]]
 name = "dbos"
-version = "0.13.0a0"
+version = "0.14.0"
 requires_python = ">=3.9"
 summary = "Ultra-lightweight durable execution in Python"
 groups = ["default"]
 dependencies = [
     "alembic>=1.13.3",
+    "fastapi-cli==0.0.5",
     "fastapi[standard]>=0.115.2",
     "jsonpickle>=3.3.0",
     "jsonschema>=4.23.0",
     "opentelemetry-api>=1.27.0",
     "opentelemetry-exporter-otlp-proto-http>=1.27.0",
     "opentelemetry-sdk>=1.27.0",
-    "psutil>=6.0.0",
     "psycopg[binary]>=3.1",
     "python-dateutil>=2.9.0.post0",
     "pyyaml>=6.0.2",
@@ -241,8 +241,8 @@ dependencies = [
     "typing-extensions>=4.12.2; python_version < \"3.10\"",
 ]
 files = [
-    {file = "dbos-0.13.0a0-py3-none-any.whl", hash = "sha256:614cfcfc72cc79bf4dfc0289ad7a9ee1ce0a0e024497de43dde2730c2c69599c"},
-    {file = "dbos-0.13.0a0.tar.gz", hash = "sha256:88c3a41a0779ca147b01dc38708665efb3625394f092e726576a1ecfdb21691f"},
+    {file = "dbos-0.14.0-py3-none-any.whl", hash = "sha256:54c30ca1438f6fc11216a3cb59425c0457a37cc98c070dafc6b9e10d1b79b5be"},
+    {file = "dbos-0.14.0.tar.gz", hash = "sha256:925c878bfcb667b907be2e75ce1ae6ac15b5709f8b421f4bf88614bd28f4db5b"},
 ]
 
 [[package]]
@@ -854,23 +854,6 @@ files = [
     {file = "protobuf-4.25.4-cp39-cp39-win_amd64.whl", hash = "sha256:ac79a48d6b99dfed2729ccccee547b34a1d3d63289c71cef056653a846a2240f"},
     {file = "protobuf-4.25.4-py3-none-any.whl", hash = "sha256:bfbebc1c8e4793cfd58589acfb8a1026be0003e852b9da7db5a4285bde996978"},
     {file = "protobuf-4.25.4.tar.gz", hash = "sha256:0dc4a62cc4052a036ee2204d26fe4d835c62827c855c8a03f29fe6da146b380d"},
-]
-
-[[package]]
-name = "psutil"
-version = "6.0.0"
-requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
-summary = "Cross-platform lib for process and system monitoring in Python."
-groups = ["default"]
-files = [
-    {file = "psutil-6.0.0-cp36-abi3-macosx_10_9_x86_64.whl", hash = "sha256:c588a7e9b1173b6e866756dde596fd4cad94f9399daf99ad8c3258b3cb2b47a0"},
-    {file = "psutil-6.0.0-cp36-abi3-manylinux_2_12_i686.manylinux2010_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:6ed2440ada7ef7d0d608f20ad89a04ec47d2d3ab7190896cd62ca5fc4fe08bf0"},
-    {file = "psutil-6.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5fd9a97c8e94059b0ef54a7d4baf13b405011176c3b6ff257c247cae0d560ecd"},
-    {file = "psutil-6.0.0-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e2e8d0054fc88153ca0544f5c4d554d42e33df2e009c4ff42284ac9ebdef4132"},
-    {file = "psutil-6.0.0-cp37-abi3-win32.whl", hash = "sha256:a495580d6bae27291324fe60cea0b5a7c23fa36a7cd35035a16d93bdcf076b9d"},
-    {file = "psutil-6.0.0-cp37-abi3-win_amd64.whl", hash = "sha256:33ea5e1c975250a720b3a6609c490db40dae5d83a4eb315170c4fe0d8b1f34b3"},
-    {file = "psutil-6.0.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:ffe7fc9b6b36beadc8c322f84e1caff51e8703b88eee1da46d1e3a6ae11b4fd0"},
-    {file = "psutil-6.0.0.tar.gz", hash = "sha256:8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"},
 ]
 
 [[package]]

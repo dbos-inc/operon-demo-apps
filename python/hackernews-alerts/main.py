@@ -39,6 +39,12 @@ def search_hackernews(query: str, window_size_hours: int):
 
     response = requests.get("http://hn.algolia.com/api/v1/search", params).json()
 
+    if not response.ok:
+        DBOS.logger.error(
+            f"API request failed with status {response.status_code}: {response.text}"
+        )
+        return []
+
     hits = []
     for hit in response["hits"]:
         # Reformat the comment by unescaping HTML, adding newlines, and removing HTML tags
