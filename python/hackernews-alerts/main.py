@@ -40,11 +40,10 @@ def search_hackernews(query: str, window_size_hours: int):
     response = requests.get("http://hn.algolia.com/api/v1/search", params)
 
     if not response.ok:
-        DBOS.logger.error(
+        raise ValueError(
             f"API request failed with status {response.status_code}: {response.text}"
         )
-        return []
-    
+
     data = response.json()
 
     if "hits" not in data:
