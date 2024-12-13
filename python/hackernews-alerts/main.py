@@ -37,16 +37,22 @@ def search_hackernews(query: str, window_size_hours: int):
         "numericFilters": f"created_at_i>{threshold.timestamp()}",
     }
 
-    response = requests.get("http://hn.algolia.com/api/v1/search", params).json()
+    response = requests.get("http://hn.algolia.com/api/v1/search", params)
 
     if not response.ok:
         DBOS.logger.error(
             f"API request failed with status {response.status_code}: {response.text}"
         )
         return []
+    
+    data = response.json()
+
+    if "hits" not in data:
+        DBOS.logger.error(f"No hits found in response. Response content: {data}")
+        return []
 
     hits = []
-    for hit in response["hits"]:
+    for hit in data["hits"]:
         # Reformat the comment by unescaping HTML, adding newlines, and removing HTML tags
         comment = hit["comment_text"]
         comment = re.sub("<p>", "\n", html.unescape(comment))
